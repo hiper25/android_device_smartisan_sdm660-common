@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package org.mokee.pocketmode;
+package org.lineageos.pocketmode;
 
 import android.database.ContentObserver;
 import android.util.Log;
 
-import mokee.providers.MKSettings;
+import lineageos.providers.LineageSettings;
 
 class SettingObserver extends ContentObserver {
 
@@ -41,7 +41,7 @@ class SettingObserver extends ContentObserver {
     void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
         mService.getContentResolver().registerContentObserver(
-            MKSettings.System.getUriFor(MKSettings.System.PROXIMITY_ON_WAKE),
+            LineageSettings.System.getUriFor(LineageSettings.System.PROXIMITY_ON_WAKE),
             false, this);
     }
 

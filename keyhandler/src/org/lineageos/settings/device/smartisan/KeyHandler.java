@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package org.mokee.settings.device.smartisan;
+package org.lineageos.settings.device.smartisan;
 
 import android.content.Context;
 import android.hardware.input.InputManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.PowerManager;
-import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.InputDevice;
@@ -29,13 +28,13 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import android.view.WindowManager;
-import android.view.WindowManagerGlobal;
 
 import com.android.internal.os.DeviceKeyHandler;
+import com.android.internal.util.ScreenshotHelper;
 
-import mokee.providers.MKSettings;
+import lineageos.providers.LineageSettings;
 
-import org.mokee.internal.util.FileUtils;
+import org.lineageos.internal.util.FileUtils;
 
 public class KeyHandler implements DeviceKeyHandler {
 
@@ -51,6 +50,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private Context context;
     private PowerManager pm;
+    private ScreenshotHelper screenshotHelper;
 
     private int trustedShortcutsDeviceId = 0;
     private int trustedPowerDeviceId = 0;
@@ -82,6 +82,7 @@ public class KeyHandler implements DeviceKeyHandler {
     public KeyHandler(Context context) {
         this.context = context;
         this.pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        this.screenshotHelper = new ScreenshotHelper(context);
 
         try {
             shortcutsScanCode = Integer.parseInt(FileUtils.readOneLine(FILE_SHORTCUTS));
@@ -213,11 +214,7 @@ public class KeyHandler implements DeviceKeyHandler {
                 ? WindowManager.TAKE_SCREENSHOT_SELECTED_REGION
                 : WindowManager.TAKE_SCREENSHOT_FULLSCREEN;
 
-        try {
-            WindowManagerGlobal.getWindowManagerService().mokeeTakeScreenshot(type);
-        } catch (RemoteException e) {
-            Log.e(TAG, "Error while trying to takeScreenshot.", e);
-        }
-    }
+        screenshotHelper.takeScreenshot(1, true, true, handler, null);
+   }
 
 }

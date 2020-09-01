@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.mokee.pocketmode;
+package org.lineageos.pocketmode;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;

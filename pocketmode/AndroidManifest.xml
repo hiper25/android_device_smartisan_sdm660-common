@@ -17,11 +17,11 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.mokee.pocketmode"
+    package="org.lineageos.pocketmode"
     android:sharedUserId="android.uid.system">
 
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-    <uses-permission android:name="mokee.permission.HARDWARE_ABSTRACTION_ACCESS" />
+    <uses-permission android:name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS" />
 
     <application
         android:label="SmartisanPocketMode"
@@ -31,7 +31,7 @@
 
         <receiver android:name=".Startup" >
             <intent-filter>
-                <action android:name="mokee.intent.action.INITIALIZE_MK_HARDWARE" />
+                <action android:name="lineageos.intent.action.INITIALIZE_LINEAGE_HARDWARE" />
             </intent-filter>
         </receiver>
 
