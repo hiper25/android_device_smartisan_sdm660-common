@@ -378,4 +378,28 @@
     <!-- True if the firmware supports Wi-Fi link probing -->
     <bool name="config_wifi_link_probing_supported">true</bool>
 
+    <!-- Paths to the libraries that contain device specific key handlers -->
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system/priv-app/LineageParts/LineageParts.apk</item>
+        <item>/system/priv-app/KeyHandler/KeyHandler.apk</item>
+    </string-array>
+
+    <!-- Names of the key handler classes -->
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>com.android.touch.gestures.KeyHandler</item>
+        <item>org.lineageos.settings.device.KeyHandler</item>
+    </string-array>
+    <!-- Default value for proximity check on screen wake
+     NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveNotificationLed">true</bool>
+
+    <!-- Whether the display cutout region of the main built-in display should be forced to
+         black in software (to avoid aliasing or emulate a cutout that is not physically existent).
+         -->
+    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
+
 </resources>
