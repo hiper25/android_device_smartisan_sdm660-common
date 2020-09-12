@@ -26,7 +26,6 @@ $(call inherit-product, vendor/smartisan/sdm660-common/sdm660-common-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -231,7 +230,7 @@ PRODUCT_PACKAGES += \
 
 # Input
 PRODUCT_PACKAGES += \
-    KeyHandlerSmartisan
+    KeyHandler
 
 # IPv6
 PRODUCT_PACKAGES += \
