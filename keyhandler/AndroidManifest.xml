@@ -15,15 +15,6 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.lineageos.settings.device.smartisan"
+    package="org.lineageos.settings.device"
     android:sharedUserId="android.uid.system">
-
-    <application
-        android:defaultToDeviceProtectedStorage="true"
-        android:directBootAware="true">
-
-        <activity android:name=".KeyHandler" />
-
-    </application>
-
 </manifest>

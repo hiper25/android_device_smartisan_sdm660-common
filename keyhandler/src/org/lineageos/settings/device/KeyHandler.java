@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device.smartisan;
+package org.lineageos.settings.device;
 
 import android.content.Context;
 import android.hardware.input.InputManager;
@@ -32,9 +32,7 @@ import android.view.WindowManager;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ScreenshotHelper;
 
-import lineageos.providers.LineageSettings;
-
-import org.lineageos.internal.util.FileUtils;
+import org.lineageos.settings.utils.FileUtils;
 
 public class KeyHandler implements DeviceKeyHandler {
 
